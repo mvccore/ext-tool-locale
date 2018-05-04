@@ -1,0 +1,40 @@
+{
+	"name": "mvccore/ext-tool-locales",
+	"type": "library",
+	"description": "MvcCore Extension - Tool - Locales - properly set and get system locale settings by PHP ` setlocale();` across any system platform.",
+	"keywords": [
+		"mvc", 
+		"mvccore", 
+		"framework", 
+		"extension", 
+		"plugin", 
+		"plug-in", 
+		"ext", 
+		"tool", 
+		"locales", 
+		"localization", 
+		"internationalization", 
+		"languages", 
+		"teritories",
+		"setlocale"
+	],
+	"license": ["BSD-3-Clause"],
+	"authors": [{
+		"name": "Tom Flidr",
+		"homepage": "https://github.com/tomFlidr"
+	}],
+	"repositories": [{
+		"type": "path",
+		"url": "../../packages"
+	}],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"minimum-stability": "dev"
+}
