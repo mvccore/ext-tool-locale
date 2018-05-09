@@ -1,0 +1,38 @@
+<style>
+
+	*, html, body {
+		font-family: 'Arial Unicode MS Regular',Arial !important;
+	}
+</style>
+<table style="background:#fff;">
+	<thead>
+		<tr>
+			<th>code</th>
+			<th>system</th>
+			<th>FormatNumber();</th>
+			<th>FormatMoney();</th>
+			<th>FormatDateTime();</th>
+		</tr>
+	</thead>
+	<tbody><?php
+		/** @var $req \MvcCore\Request */
+		$req = & $this->GetController()->GetRequest();
+		foreach ($this->data as $item):
+		$req->SetLang($item->lang_code);
+		$req->SetLocale($item->locale_code);
+		$system = \MvcCore\Ext\Tool\Locales::SetLocale(LC_ALL, 'cs_CZ');
+		$system = \MvcCore\Ext\Tool\Locales::SetLocale(LC_ALL, $item->code);
+		$this->GetHelper('FormatNumber')->SetView($this)->SetIntlExtensionFormating(1);
+		$this->GetHelper('FormatMoney')->SetView($this)->SetIntlExtensionFormating(1);
+		$this->GetHelper('FormatDate')->SetView($this)->SetIntlExtensionFormating(1);
+		?>
+		<tr>
+			<td><nobr><?php echo $item->code; ?></nobr></td>
+			<td><nobr><?php echo $system; ?></nobr></td>
+			<td><nobr><?php echo $this->FormatNumber(-1234567.8912); ?></nobr></td>
+			<td><nobr><?php echo $this->FormatMoney(-1234567.89123); ?></nobr></td>
+			<td><nobr><?php echo $this->FormatDate(time()); ?></nobr></td>
+		</tr>
+		<?php endforeach; ?>
+	<tbody>
+</table>
