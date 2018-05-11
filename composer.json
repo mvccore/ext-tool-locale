@@ -23,18 +23,11 @@
 		"name": "Tom Flidr",
 		"homepage": "https://github.com/tomFlidr"
 	}],
-	"repositories": [{
-		"type": "path",
-		"url": "../../packages"
-	}],
 	"require": {
-		"php": ">=5.4.0"
-	},
-	"require-dev": {
 		"php": ">=5.4.0"
 	},
 	"autoload": {
 		"classmap": ["src/"]
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "stable"
 }

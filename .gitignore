@@ -54,3 +54,6 @@ Temporary Items
 # Project files
 *.phpproj
 *.phpproj.user
+/tests/vendor
+/tests/composer.lock
+composer.dev.json
