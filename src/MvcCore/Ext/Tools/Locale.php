@@ -11,7 +11,7 @@
  * @license		https://mvccore.github.io/docs/mvccore/5.0.0/LICENCE.md
  */
 
-namespace MvcCore\Ext\Tool;
+namespace MvcCore\Ext\Tools;
 
 /**
  * Responsibility - properly set and get system locale settings by PHP ` setlocale();` across any system platform.
@@ -23,7 +23,7 @@ namespace MvcCore\Ext\Tool;
  * @see https://docs.moodle.org/dev/Table_of_locales
  * @see https://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes
  */
-class Locales
+class Locale
 {
 	/**
 	 * All possible language codes and names supported on windows platforms.
