@@ -8,13 +8,13 @@ class Index extends \MvcCore\Controller
 		date_default_timezone_set('Europe/Prague');
 	}
     public function IndexAction () {
-		$cfg = array(
+		$cfg = [
 			'driver'	=> 'mysql',
 			'host'		=> 'localhost',
 			'user'		=> 'root',
 			'password'	=> '1234',
 			'database'	=> 'tests'
-		);
+		];
 		if ($_SERVER['SERVER_NAME'] == 'dev.tests.tomflidr.cz') {
 			$cfg['user'] = 'tests';
 			$cfg['password'] = '4g%88v§kgaYJH@tVw';

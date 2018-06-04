@@ -29,7 +29,7 @@ class Locale
 	 * All possible language codes and names supported on windows platforms.
 	 * @var string[]
 	 */
-	protected static $langs = array(
+	protected static $langs = [
 		'aa'	=> 'Afar',
 		'af'	=> 'Afrikaans',
 		'agq'	=> 'Aghem',
@@ -243,13 +243,13 @@ class Locale
 		'zgh'	=> 'Standard Moroccan Tamazight',
 		'zh'	=> 'Chinese (Simplified)',
 		'zu'	=> 'Zulu',
-	);
+	];
 
 	/**
 	 * All possible teritory codes and names supported on windows platforms.
 	 * @var string[]
 	 */
-	protected static $locales = array(
+	protected static $locales = [
 		'001'	=> 'World',
 		'029'	=> 'Caribbean',
 		'150'	=> 'Europe',
@@ -488,14 +488,14 @@ class Locale
 		'ZA'	=> 'South Africa',
 		'ZM'	=> 'Zambia',
 		'ZW'	=> 'Zimbabwe',
-	);
+	];
 
 	/**
 	 * Locale script codes and names.
 	 * Commented values are not supported on windows yet.
 	 * @var string[]
 	 */
-	protected static $scripts = array(
+	protected static $scripts = [
 		'Arab'	=>	'Perso-Arabic',
 		//'Cans'	=>	'Syllabics',
 		//'Cher'	=>	'Cherokee',
@@ -506,13 +506,13 @@ class Locale
 		'Mong'	=>	'Traditional Mongolian',
 		//'Tfng'	=>	'Tifinagh',
 		//'Vaii'	=>	'Vaii',
-	);
+	];
 
 	/**
 	 * All possible system encoding numbers and encoding names supported on windows.
 	 * @var string[]
 	 */
-	protected static $encodings = array(
+	protected static $encodings = [
 		'874'			=> 'WINDOWS-874',
 		'932'			=> 'CP932',
 		'936'			=> 'CP936',
@@ -530,7 +530,7 @@ class Locale
 		//'65001'			=> '',
 		'Gaelic'		=> 'WINDOWS-1252',
 		//'x-iscii-ma'	=> 'x-iscii-ma',
-	);
+	];
 
 	/**
 	 * Exceptions for windows platforms how to translate language and terotory combination
@@ -549,14 +549,14 @@ class Locale
 	 * Commented values are not supported on windows yet.
 	 * @var \array[]
 	 */
-	protected static $exceptions = array(
-		'az'			=> array('az', NULL, 'Latn',	0,	1),
+	protected static $exceptions = [
+		'az'			=> ['az', NULL, 'Latn',	0,	1],
 		//'az_Cyrl'		=> array('az', NULL, 'Cyrl',	0,	0),
 		//'az_Cyrl_AZ'	=> array('az', 'AZ', 'Cyrl',	0,	0,		0,	0),
 		//'az_Latn'		=> array('az', NULL, 'Latn',	0,	1),
 		//'az_Latn_AZ'	=> array('az', 'AZ', 'Latn',	0,	1,		0,	0),
 		//'bm_Latn_ML'	=> array('bm', 'ML', 'Latn',	0,	2,		1,	'ML'),
-		'bs'			=> array('bs', NULL, 'Latn',	0,	4),
+		'bs'			=> ['bs', NULL, 'Latn',	0,	4],
 		//'bs_Cyrl'		=> array('bs', NULL, 'Cyrl',	0,	3),
 		//'bs_Cyrl_BA'	=> array('bs', 'BA', 'Cyrl',	0,	3,		0,	1),
 		//'bs_Latn'		=> array('bs', NULL, 'Latn',	0,	4),
@@ -567,13 +567,13 @@ class Locale
 		//'es_ES_tradnl'	=> array('es', 'ES', 'tradnl',	1,	'es',	1,	'ES'),
 		//'ff_Latn'		=> array('ff', NULL, 'Latn',	1,	'ff'),
 		//'ff_Latn_SN'	=> array('ff', 'SN', 'Latn',	1,	'ff',	1,	'SN'),
-		'ha'			=> array('ha', NULL, 'Latn',	0,	7),
+		'ha'			=> ['ha', NULL, 'Latn',	0,	7],
 		//'ha_Latn'		=> array('ha', NULL, 'Latn',	0,	7),
 		//'ha_Latn_GH'	=> array('ha', 'GH', 'Latn',	0,	7,		1,	'GH'),
 		//'ha_Latn_NE'	=> array('ha', 'NE', 'Latn',	0,	7,		1,	'NE'),
 		//'ha_Latn_NG'	=> array('ha', 'NG', 'Latn',	0,	7,		1,	'NG'),
-		'hr_BA'			=> array('hr', 'BA', 'Latn',	1,	'hr',	0,	1),
-		'iu'			=> array('iu', NULL, 'Latn',	0,	8),
+		'hr_BA'			=> ['hr', 'BA', 'Latn',	1,	'hr',	0,	1],
+		'iu'			=> ['iu', NULL, 'Latn',	0,	8],
 		//'iu_Cans'		=> array('iu', NULL, 'Cans',	0,	9),
 		//'iu_Cans_CA'	=> array('iu', 'CA', 'Cans',	0,	9,		1,	'CA'),
 		//'iu_Latn'		=> array('iu', NULL, 'Latn',	0,	8),
@@ -586,15 +586,15 @@ class Locale
 		//'ku_Arab_IQ'	=> array('ku', 'IQ', 'Arab',	1,	'ku',	1,	'IQ'),
 		//'ku_Arab_IR'	=> array('ku', 'IR', 'Arab',	1,	'ku',	1,	'IR'),
 		//'mk_MK'			=> array('mk', 'MK', NULL,		0,	13,		1,	'MK'),
-		'mn'			=> array('mn', NULL, 'Cyrl',	0,	14),
+		'mn'			=> ['mn', NULL, 'Cyrl',	0,	14],
 		//'mn_Cyrl'		=> array('mn', NULL, 'Cyrl',	0,	14),
-		'mn_MN'			=> array('mn', 'MN', 'Cyrl',	0,	14,		0,	3),
+		'mn_MN'			=> ['mn', 'MN', 'Cyrl',	0,	14,		0,	3],
 		//'mn_Mong'		=> array('mn', NULL, 'Mong',	0,	15),
 		//'mn_Mong_CN'	=> array('mn', 'CN', 'Mong',	0,	15,		1,	'CN'),
-		'mn_Mong_MN'	=> array('mn', 'MN', 'Mong',	0,	15,		0,	3),
+		'mn_Mong_MN'	=> ['mn', 'MN', 'Mong',	0,	15,		0,	3],
 		//'nb'			=> array('nb', NULL, NULL,		1,	'nb'),
 		//'nb_NO'			=> array('nb', 'NO', NULL,		1,	'nb',	0,	5),
-		'nn_NO'			=> array('nn', 'NO', NULL,		1,	'nn',	0,	5),
+		'nn_NO'			=> ['nn', 'NO', NULL,		1,	'nn',	0,	5],
 		//'os_GE'			=> array('os', 'GE', NULL,		0,	16,		1,	'GE'),
 		//'os_RU'			=> array('os', 'RU', NULL,		0,	16,		1,	'RU'),
 		//'pa_Arab'		=> array('pa', NULL, 'Arab',	1,	'pa'),
@@ -602,22 +602,22 @@ class Locale
 		//'quc_Latn_GT'	=> array('quc', 'GT', 'Latn',	0,	11,		1,	'GT'),
 		//'sd_Arab'		=> array('sd', NULL, 'Arab',	0,	20),
 		//'sd_Arab_PK'	=> array('sd', 'PK', 'Arab',	0,	20,		1,	'PK'),
-		'se_FI'			=> array('se', 'FI', NULL,		1,	'se',	1,	'FI'),
-		'se_NO'			=> array('se', 'NO', NULL,		1,	'se',	0,	5),
-		'se_SE'			=> array('se', 'SE', NULL,		1,	'se',	1,	'SE'),
+		'se_FI'			=> ['se', 'FI', NULL,		1,	'se',	1,	'FI'],
+		'se_NO'			=> ['se', 'NO', NULL,		1,	'se',	0,	5],
+		'se_SE'			=> ['se', 'SE', NULL,		1,	'se',	1,	'SE'],
 		//'shi_Latn'		=> array('shi', NULL, 'Latn',	0,	22),
 		//'shi_Latn_MA'	=> array('shi', 'MA', 'Latn',	0,	22,		1,	'MA'),
 		//'shi_Tfng'		=> array('shi', NULL, 'Tfng',	0,	21,		0,	11),
 		//'shi_Tfng_MA'	=> array('shi', 'MA', 'Tfng',	0,	21,		1,	'MA'),
-		'sma_NO'		=> array('sma', 'NO', NULL,		1,	'sma',	0,	5),
-		'sma_SE'		=> array('sma', 'SE', NULL,		1,	'sma',	1,	'SE'),
-		'smj_NO'		=> array('smj', 'NO', NULL,		1,	'smj',	0,	5),
-		'smj_SE'		=> array('smj', 'SE', NULL,		1,	'smj',	1,	'SE'),
-		'smn_FI'		=> array('smn', 'FI', NULL,		1,	'smn',	1,	'FI'),
-		'sms_FI'		=> array('sms', 'FI', NULL,		1,	'sms',	1,	'FI'),
+		'sma_NO'		=> ['sma', 'NO', NULL,		1,	'sma',	0,	5],
+		'sma_SE'		=> ['sma', 'SE', NULL,		1,	'sma',	1,	'SE'],
+		'smj_NO'		=> ['smj', 'NO', NULL,		1,	'smj',	0,	5],
+		'smj_SE'		=> ['smj', 'SE', NULL,		1,	'smj',	1,	'SE'],
+		'smn_FI'		=> ['smn', 'FI', NULL,		1,	'smn',	1,	'FI'],
+		'sms_FI'		=> ['sms', 'FI', NULL,		1,	'sms',	1,	'FI'],
 		//'sn_Latn'		=> array('sn', NULL, 'Latn',	0,	19,		0,	2),
 		//'sn_Latn_ZW'	=> array('sn', 'ZW', 'Latn',	0,	19,		1,	'ZW'),
-		'sr'			=> array('sr', NULL, 'Latn',	0,	18),
+		'sr'			=> ['sr', NULL, 'Latn',	0,	18],
 		//'sr_Cyrl'		=> array('sr', NULL, 'Cyrl',	0,	17),
 		//'sr_Cyrl_BA'	=> array('sr', 'BA', 'Cyrl',	0,	17,		0,	1),
 		//'sr_Cyrl_CS'	=> array('sr', 'CS', 'Cyrl',	0,	17,		0,	8),
@@ -634,7 +634,7 @@ class Locale
 		//'tzm_Latn_DZ'	=> array('tzm', 'DZ', 'Latn',	0,	24,		1,	'DZ'),
 		//'tzm_Latn_MA'	=> array('tzm', 'MA', 'Latn',	0,	5,		1,	'MA'),
 		//'ur_PK'			=> array('ur', 'PK', NULL,		1,	'ur',	1,	'PK'),
-		'uz'			=> array('uz', NULL, 'Latn',	0,	27),
+		'uz'			=> ['uz', NULL, 'Latn',	0,	27],
 		//'uz_Arab'		=> array('uz', NULL, 'Arab',	0,	25,		0,	6),
 		//'uz_Arab_AF'	=> array('uz', 'AF', 'Arab',	0,	25,		1,	'AF'),
 		//'uz_Cyrl'		=> array('uz', NULL, 'Cyrl',	0,	26),
@@ -647,20 +647,20 @@ class Locale
 		//'vai_Vaii_LR'	=> array('vai', 'LR', 'Vaii',	0,	28,		1,	'LR'),
 		//'zgh_Tfng'		=> array('zgh', NULL, 'Tfng',	1,	'zgh',	0,	11),
 		//'zgh_Tfng_MA'	=> array('zgh', 'MA', 'Tfng',	1,	'zgh',	1,	'MA'),
-		'zh_CN'			=> array('zh', 'CN', NULL,		1,	'zh',	1,	'CN'),
+		'zh_CN'			=> ['zh', 'CN', NULL,		1,	'zh',	1,	'CN'],
 		//'zh_Hans'		=> array('zh', NULL, 'Hans',	1,	'zh'),
 		//'zh_Hant'		=> array('zh', NULL, 'Hant',	1,	'zh'),
 		//'zh_HK'			=> array('zh', 'HK', NULL,		1,	'zh',	1,	'HK'),
 		//'zh_MO'			=> array('zh', 'MO', NULL,		1,	'zh',	1,	'MO'),
-		'zh_SG'			=> array('zh', 'SG', NULL,		1,	'zh',	1,	'SG'),
-		'zh_TW'			=> array('zh', 'TW', NULL,		1,	'zh',	0,	9),
-	);
+		'zh_SG'			=> ['zh', 'SG', NULL,		1,	'zh',	1,	'SG'],
+		'zh_TW'			=> ['zh', 'TW', NULL,		1,	'zh',	0,	9],
+	];
 
 	/**
 	 * Exceptional language names without any language codes.
 	 * @var string[]
 	 */
-	protected static $exceptionsLangs = array(
+	protected static $exceptionsLangs = [
 		//0	=> 'Azerbaijani (Cyrillic)',
 		1	=> 'Azerbaijani (Latin)',
 		//2	=> 'Bamanankan (Latin)',
@@ -691,13 +691,13 @@ class Locale
 		27	=> 'Uzbek (Latin)',
 		//28	=> 'Vai',
 		//29	=> 'Vai (Latin)',
-	);
+	];
 
 	/**
 	 * Exceptional teritory names without any teritory codes.
 	 * @var string[]
 	 */
-	protected static $exceptionsLocales = array(
+	protected static $exceptionsLocales = [
 		//0	=> 'Azerbaijan',
 		1	=> 'Bosnia and Herzegovina',
 		//2	=> 'Latin',
@@ -711,28 +711,28 @@ class Locale
 		//10	=> 'Tajikistan',
 		//11	=> 'Tifinagh',
 		//12	=> 'Uzbekistan',
-	);
+	];
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
 	 * with keys by windows languages names and with values by languages codes.
 	 * @var string[]
 	 */
-	protected static $LANGS = array();
+	protected static $LANGS = [];
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
 	 * with keys by windows teritory names and with values by teritory codes.
 	 * @var string[]
 	 */
-	protected static $LOCALES = array();
+	protected static $LOCALES = [];
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
 	 * with keys by script names and with values by script codes.
 	 * @var string[]
 	 */
-	protected static $SCRIPTS = array();
+	protected static $SCRIPTS = [];
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
@@ -740,7 +740,7 @@ class Locale
 	 * as exception indexes into `static::$exceptions` array.
 	 * @var string[]
 	 */
-	protected static $EXCEPTIONS = array();
+	protected static $EXCEPTIONS = [];
 
 	/**
 	 * `TRUE` if current platform is any windows system, `FALSE` otherwise.
@@ -752,7 +752,7 @@ class Locale
 	 * Cache array with currently set system locale values, indexed by locale categories. (LC_ALL, LC_CTYPE...)
 	 * @var string[]|bool[]
 	 */
-	protected static $rawSystemValues = array();
+	protected static $rawSystemValues = [];
 
 	/**
 	 * Cache property with currently set parsed system locale for all categories.
@@ -764,13 +764,13 @@ class Locale
 	 * Cache array with currently set parsed system locale values, indexed by locale categories. (LC_ALL, LC_CTYPE...)
 	 * @var \stdClass[]
 	 */
-	protected static $parsedSystemValues = array();
+	protected static $parsedSystemValues = [];
 
 	/**
 	 * System locale categories names to parse all set system locale categories properly.
 	 * @var string[]
 	 */
-	protected static $categories = array(
+	protected static $categories = [
 		0	=> 'LC_CTYPE',
 		1	=> 'LC_NUMERIC',
 		2	=> 'LC_TIME',
@@ -778,7 +778,7 @@ class Locale
 		4	=> 'LC_MONETARY',
 		5	=> 'LC_MESSAGES',
 		6	=> 'LC_ALL',
-	);
+	];
 
 	/**
 	 * Static class initialization to initialize windows platform boolean.
@@ -894,7 +894,7 @@ class Locale
 		// if value is `C` only - sel att categories to null and return nulls;
 		if ($rawSystemValue === 'C') {
 			static::$allSystemValues = NULL;
-			static::$parsedSystemValues = array();
+			static::$parsedSystemValues = [];
 			return NULL;
 		}
 		// if system returns more info
@@ -945,14 +945,14 @@ class Locale
 	 * @return \stdClass
 	 */
 	protected static function parseLocale ($locale = 'en_US.UTF-8@euro') {
-		$result = (object) array(
+		$result = (object) [
 			'lang'		=> '',
 			'locale'	=> NULL,
 			'script'	=> NULL,
 			'encoding'	=> NULL,
 			'euro'		=> NULL,
 			'system'	=> '',
-		);
+		];
 		$locale = (string) $locale;
 		// euro
 		$atSignPos = strrpos($locale, '@');
@@ -1009,7 +1009,7 @@ class Locale
 		if (!static::$windowsPlatform) {
 			$result = $parsedLocale;
 		} else {
-			$result = (object) array_merge(array(), (array) $parsedLocale);
+			$result = (object) array_merge([], (array) $parsedLocale);
 			if (!static::$LANGS) static::prepareWinConfigOppositeArrays();
 
 			$langAndLocale = $parsedLocale->lang . ($parsedLocale->locale !== NULL ? $parsedLocale->locale : '');
