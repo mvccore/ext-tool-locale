@@ -1132,4 +1132,4 @@ class Locale
 		}
 	}
 }
-Locales::StaticInit(); // initialize platform boolean
+Locale::StaticInit(); // initialize platform boolean
