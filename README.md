@@ -10,5 +10,8 @@ Properly set and get system locale settings by PHP ` setlocale();` across any sy
 ```php
 // Windows or Unix - syntax is the same:
 $configuredLocale = \MvcCore\Ext\Tools\Locale::SetLocale(LC_ALL, 'nl_NL@euro');
+
 var_dump($configuredLocale);
+// Windows: Dutch_Netherlands.1252
+// Unix: nl_NL@euro
 ```
