@@ -1,7 +1,7 @@
 {
 	"name": "mvccore/ext-tool-locale",
 	"type": "library",
-	"description": "MvcCore Extension - Tool - Locale - properly set and get system locale settings by PHP ` setlocale();` across any system platform.",
+	"description": "MvcCore - Extension - Tool - Locale - properly set and get system locale settings by PHP ` setlocale();` across any system platform.",
 	"keywords": [
 		"mvc", 
 		"mvccore", 
