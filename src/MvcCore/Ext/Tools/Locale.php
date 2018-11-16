@@ -858,8 +858,8 @@ class Locale
 	 * return currently set system locale values for all categories
 	 * by category `LC_ALL` as parsed `\stdClass` object(s), indexed by categories.
 	 * Returned parsed locale value `\stdClass` object has fields:
-	 * - `lang`		(`string`)		- Language code, lowercase (`"en" | "de" ...`).
-	 * - `locale`	(`string|NULL`)	- Teritory code, uppercase (`"US" | "GB" ...`).
+	 * - `lang`		(`string`)		- Language code, lower case (`"en" | "de" ...`).
+	 * - `locale`	(`string|NULL`)	- Teritory code, upper case (`"US" | "GB" ...`).
 	 * - `script`	(`string|NULL`)	- Script code (`"Latn" | "Cyrl" ...`).
 	 * - `encoding`	(`string|NULL`)	- System encoding name (`"UTF-8" | "WINDOWS-1250" | "CP936"...`).
 	 * - `euro`		(`string|NULL`)	- `"euro"` if there is Euro support or `NULL` otherwise.
@@ -983,7 +983,7 @@ class Locale
 	}
 
 	/**
-	 * Complete parsed locale system record (optionaly with euro sign or without euro sign).
+	 * Complete parsed locale system record (optionally with euro sign or without euro sign).
 	 * @param \stdClass $parsedLocale
 	 * @param bool $withEuro
 	 * @return \stdClass
