@@ -15,7 +15,7 @@ namespace MvcCore\Ext\Tools;
 
 /**
  * Responsibility - properly set and get system locale settings by PHP ` setlocale();` across any system platform.
- * - Set system locale settings by given category, lang code, teritory code, encoding (and euro sign).
+ * - Set system locale settings by given category, lang code, territory code, encoding (and euro sign).
  * - Get system locale settings by given category parsed into `\stdClass` object with all info above.
  * @see http://php.net/manual/en/function.setlocale.php
  * @see https://msdn.microsoft.com/en-us/library/x99tb11d.aspx
@@ -246,7 +246,7 @@ class Locale
 	];
 
 	/**
-	 * All possible teritory codes and names supported on windows platforms.
+	 * All possible territory codes and names supported on windows platforms.
 	 * @var string[]
 	 */
 	protected static $locales = [
@@ -534,8 +534,8 @@ class Locale
 
 	/**
 	 * Exceptions for windows platforms how to translate language and terotory combination
-	 * into language and teritory name or how to translte names into codes.
-	 * To get 'language_teritory' combination for windows `setlocale()` call, you have to
+	 * into language and territory name or how to translte names into codes.
+	 * To get 'language_territory' combination for windows `setlocale()` call, you have to
 	 * get exception record by code and then you need to join language name and locale name by
 	 * data founded in this array:
 	 * 'exception_code' => array(
@@ -544,8 +544,8 @@ class Locale
 	 *		2	=> script code,
 	 *		3	=> lang name is between standard langs - 0 - it is between exceptional langs, 1 - i'is between standard langs,
 	 *		4	=> lang index in exception langs or lang code in standard langs,
-	 *		5	=> teritory name is between locales - 1 - it is between exceptional teritories, 2 - it's between standard teritories,
-	 *		6	=> teritory name or locale code or nothing
+	 *		5	=> territory name is between locales - 1 - it is between exceptional teritories, 2 - it's between standard teritories,
+	 *		6	=> territory name or locale code or nothing
 	 * Commented values are not supported on windows yet.
 	 * @var \array[]
 	 */
@@ -694,7 +694,7 @@ class Locale
 	];
 
 	/**
-	 * Exceptional teritory names without any teritory codes.
+	 * Exceptional territory names without any territory codes.
 	 * @var string[]
 	 */
 	protected static $exceptionsLocales = [
@@ -722,7 +722,7 @@ class Locale
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
-	 * with keys by windows teritory names and with values by teritory codes.
+	 * with keys by windows territory names and with values by territory codes.
 	 * @var string[]
 	 */
 	protected static $LOCALES = [];
@@ -736,7 +736,7 @@ class Locale
 
 	/**
 	 * Opposite array to translate windows system locale value back into application locale value,
-	 * with keys by language name and teritory name cobination and with values
+	 * with keys by language name and territory name cobination and with values
 	 * as exception indexes into `static::$exceptions` array.
 	 * @var string[]
 	 */
@@ -812,7 +812,7 @@ class Locale
 		foreach ($inputLocales as $inputLocale) {
 			$parsedLocale = static::parseLocale($inputLocale);
 			if (static::$windowsPlatform) {
-				// translate lang and teritory (for windows),
+				// translate lang and territory (for windows),
 				// remove any encoding (for windows)
 				// and let microsoft choose their own crazyshit encoding
 				$translatedSystemValue = static::translateParsedLocaleToSystemValue($parsedLocale);
@@ -936,7 +936,7 @@ class Locale
 	/**
 	 * Parse given application or system locale value into `\stdClass` object with records:
 	 * - `lang`		(`string`)		- Language code (or with language name on windows).
-	 * - `locale`	(`string|NULL`)	- Teritory code (or with teritory name on windows).
+	 * - `locale`	(`string|NULL`)	- Teritory code (or with territory name on windows).
 	 * - `script`	(`string|NULL`)	- Script code.
 	 * - `encoding`	(`string|NULL`)	- System encoding name (or with system encoding number on windows).
 	 * - `euro`		(`string|NULL`)	- `"euro"` if there is Euro support or `NULL` otherwise.
@@ -1060,7 +1060,7 @@ class Locale
 	 * Translate application locale value into proper system locale value.
 	 * Do not change anything and return `$parsedLocale->system` immediatelly
 	 * on non-windows platforms. But return translated `$parsedLocale->system`
-	 * value on windows platforms into proper string with language and teritory combination.
+	 * value on windows platforms into proper string with language and territory combination.
 	 * @param \stdClass $parsedLocale
 	 * @return string
 	 */
@@ -1083,7 +1083,7 @@ class Locale
 						: static::$exceptionsLocales[$exception[6]]);
 				return $result;
 			} else {
-				// if there is no exception - translate language and teritory (and script if any)
+				// if there is no exception - translate language and territory (and script if any)
 				$result = (isset(static::$langs[$parsedLocale->lang])
 						? static::$langs[$parsedLocale->lang]
 						: $parsedLocale->lang);
