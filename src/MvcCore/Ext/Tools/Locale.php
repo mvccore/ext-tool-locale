@@ -1058,7 +1058,7 @@ class Locale
 
 	/**
 	 * Translate application locale value into proper system locale value.
-	 * Do not change anything and return `$parsedLocale->system` immediatelly
+	 * Do not change anything and return `$parsedLocale->system` immediately
 	 * on non-windows platforms. But return translated `$parsedLocale->system`
 	 * value on windows platforms into proper string with language and territory combination.
 	 * @param \stdClass $parsedLocale
