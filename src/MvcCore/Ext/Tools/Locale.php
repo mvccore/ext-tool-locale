@@ -26,6 +26,13 @@ namespace MvcCore\Ext\Tools;
 class Locale
 {
 	/**
+	 * MvcCore - version:
+	 * Comparison by PHP function `version_compare();`.
+	 * @see http://php.net/manual/en/function.version-compare.php
+	 */
+	const VERSION = '5.0.0-alpha';
+
+	/**
 	 * All possible language codes and names supported on windows platforms.
 	 * @var string[]
 	 */
