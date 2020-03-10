@@ -995,7 +995,7 @@ class Locale
 	 * @param bool $withEuro
 	 * @return \stdClass
 	 */
-	protected static function completeParsedLocaleSystemValue (\stdClass & $parsedLocale, $withEuro = TRUE) {
+	protected static function completeParsedLocaleSystemValue (\stdClass $parsedLocale, $withEuro = TRUE) {
 		$parsedLocale->system = $parsedLocale->lang;
 		if ($parsedLocale->script !== NULL) $parsedLocale->system .= '_' . $parsedLocale->script;
 		if ($parsedLocale->locale !== NULL) $parsedLocale->system .= '_' . $parsedLocale->locale;
