@@ -312,7 +312,7 @@ class Locale
 		'CW'	=> 'Curaçao',
 		'CX'	=> 'Christmas Island',
 		'CY'	=> 'Cyprus',
-		'CZ'	=> 'Czech Republic',
+		'CZ'	=> 'Czechia', // 'Czech Republic' for Windows 7
 		'DE'	=> 'Germany',
 		'DJ'	=> 'Djibouti',
 		'DK'	=> 'Denmark',
@@ -815,6 +815,7 @@ class Locale
 		$category = array_shift($args);
 		$inputLocales = $args;
 		$result = NULL;
+		$newValue = NULL;
 		$parsedLocale = new \stdClass;
 		foreach ($inputLocales as $inputLocale) {
 			$parsedLocale = static::parseLocale($inputLocale);
@@ -824,14 +825,15 @@ class Locale
 				// and let microsoft choose their own crazyshit encoding
 				$translatedSystemValue = static::translateParsedLocaleToSystemValue($parsedLocale);
 				$result = \setlocale($category, $translatedSystemValue);
-				$dotPos = strpos($result, '.');
+				$newValue = \setlocale($category, 0);
+				$dotPos = strpos($newValue, '.');
 				if ($dotPos !== FALSE) {
-					$encodingBySystem = substr($result, $dotPos + 1);
+					$encodingBySystem = substr($newValue, $dotPos + 1);
 					if ($encodingBySystem && isset(static::$encodings[$encodingBySystem])) {
 						$parsedLocale->encoding = static::$encodings[$encodingBySystem];
 					}
 				}
-				$parsedLocale->system = $result;
+				$parsedLocale->system = $newValue;
 			} else {
 				$result = \setlocale($category, $parsedLocale->system);
 				// try it again without "@euro"
@@ -839,12 +841,13 @@ class Locale
 					$parsedLocale = static::completeParsedLocaleSystemValue($parsedLocale, FALSE);
 					$result = \setlocale($category, $parsedLocale->system);
 				}
+				$newValue = \setlocale($category, 0);
 			}
 			if ($result !== FALSE) break;
 		}
 		// cache parsed result and raw system value for future `GetLocale()` call(s)
 		if ($result !== FALSE) {
-			static::$rawSystemValues[$category] = $result;
+			static::$rawSystemValues[$category] = $newValue;
 			if ($category === LC_ALL) {
 				static::$allSystemValues = $parsedLocale;
 				foreach (static::$categories as $categoryId => $categoryName)
@@ -856,7 +859,7 @@ class Locale
 					static::$allSystemValues = NULL;
 			}
 		}
-		return $result;
+		return $newValue;
 	}
 
 	/**
@@ -890,7 +893,7 @@ class Locale
 				static::$parsedSystemValues[$category] = static::$allSystemValues;
 				return static::$parsedSystemValues[$category];
 			}
-		} else  if ($category === LC_ALL && static::$allSystemValues !== NULL) {
+		} else if ($category === LC_ALL && static::$allSystemValues !== NULL) {
 			return static::$allSystemValues;
 		}
 		// parse value(s) from system value
