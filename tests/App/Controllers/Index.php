@@ -2,12 +2,13 @@
 
 namespace App\Controllers;
 
-class Index extends \MvcCore\Controller
-{
+class Index extends \MvcCore\Controller {
+
 	public function Init() {
 		date_default_timezone_set('Europe/Prague');
 	}
-    public function IndexAction () {
+	
+	public function IndexAction () {
 		$cfg = [
 			'driver'	=> 'mysql',
 			'host'		=> 'localhost',
