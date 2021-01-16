@@ -5,11 +5,5 @@
 		"mvccore/ext-view-helper-formatmoney": "dev-master",
 		"mvccore/ext-view-helper-formatdate": "dev-master"
 	},
-	"require-dev": {
-		"php": ">=5.4.0",
-		"mvccore/mvccore": "@dev",
-		"mvccore/ext-view-helper-formatmoney": "@dev",
-		"mvccore/ext-view-helper-formatdate": "@dev"
-	},
 	"minimum-stability": "dev"
 }
