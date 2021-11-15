@@ -30,7 +30,7 @@ class Locale {
 	 * Comparison by PHP function `version_compare();`.
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.0';
+	const VERSION = '5.0.1';
 
 	/**
 	 * All possible language codes and names supported on windows platforms.
@@ -825,7 +825,7 @@ class Locale {
 				// and let microsoft choose their own crazyshit encoding
 				$translatedSystemValue = static::translateParsedLocaleToSystemValue($parsedLocale);
 				$result = \setlocale($category, $translatedSystemValue);
-				$newValue = \setlocale($category, 0);
+				$newValue = \setlocale($category, NULL);
 				$dotPos = strpos($newValue, '.');
 				if ($dotPos !== FALSE) {
 					$encodingBySystem = substr($newValue, $dotPos + 1);
@@ -841,7 +841,7 @@ class Locale {
 					$parsedLocale = static::completeParsedLocaleSystemValue($parsedLocale, FALSE);
 					$result = \setlocale($category, $parsedLocale->system);
 				}
-				$newValue = \setlocale($category, 0);
+				$newValue = \setlocale($category, NULL);
 			}
 			if ($result !== FALSE) break;
 		}
@@ -899,7 +899,7 @@ class Locale {
 		// parse value(s) from system value
 		$rawSystemValue = isset(static::$rawSystemValues[$category])
 			? static::$rawSystemValues[$category]
-			: \setlocale($category, 0);
+			: \setlocale($category, NULL);
 		static::$rawSystemValues[$category] = $rawSystemValue;
 		// if value is `C` only - sel att categories to null and return nulls;
 		if ($rawSystemValue === 'C') {
