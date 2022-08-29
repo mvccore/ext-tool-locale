@@ -30,7 +30,7 @@ class Locale {
 	 * Comparison by PHP function `version_compare();`.
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.1';
+	const VERSION = '5.0.2';
 
 	/**
 	 * All possible language codes and names supported on windows platforms.
@@ -825,15 +825,14 @@ class Locale {
 				// and let microsoft choose their own crazyshit encoding
 				$translatedSystemValue = static::translateParsedLocaleToSystemValue($parsedLocale);
 				$result = \setlocale($category, $translatedSystemValue);
-				$newValue = \setlocale($category, NULL);
-				$dotPos = strpos($newValue, '.');
+				$dotPos = strpos($result, '.');
 				if ($dotPos !== FALSE) {
-					$encodingBySystem = substr($newValue, $dotPos + 1);
+					$encodingBySystem = substr($result, $dotPos + 1);
 					if ($encodingBySystem && isset(static::$encodings[$encodingBySystem])) {
 						$parsedLocale->encoding = static::$encodings[$encodingBySystem];
 					}
 				}
-				$parsedLocale->system = $newValue;
+				$parsedLocale->system = $result;
 			} else {
 				$result = \setlocale($category, $parsedLocale->system);
 				// try it again without "@euro"
