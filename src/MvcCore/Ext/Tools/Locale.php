@@ -30,7 +30,7 @@ class Locale {
 	 * Comparison by PHP function `version_compare();`.
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.2';
+	const VERSION = '5.2.0';
 
 	/**
 	 * All possible language codes and names supported on windows platforms.
@@ -840,8 +840,8 @@ class Locale {
 					$parsedLocale = static::completeParsedLocaleSystemValue($parsedLocale, FALSE);
 					$result = \setlocale($category, $parsedLocale->system);
 				}
-				$newValue = \setlocale($category, NULL);
 			}
+			$newValue = \setlocale($category, NULL);
 			if ($result !== FALSE) break;
 		}
 		// cache parsed result and raw system value for future `GetLocale()` call(s)
