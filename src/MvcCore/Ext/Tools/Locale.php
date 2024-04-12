@@ -30,7 +30,7 @@ class Locale {
 	 * Comparison by PHP function `version_compare();`.
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.2.1';
+	const VERSION = '5.2.2';
 
 	/**
 	 * All possible language codes and names supported on windows platforms.
@@ -841,7 +841,7 @@ class Locale {
 					$parsedLocale = static::completeParsedLocaleSystemValue($parsedLocale, FALSE);
 					$result = \setlocale($category, $parsedLocale->system);
 				}
-				$newValue = \setlocale($category, NULL);
+				$newValue = \setlocale($category, '0');
 			}
 			if ($result !== FALSE) break;
 		}
@@ -899,7 +899,7 @@ class Locale {
 		// parse value(s) from system value
 		$rawSystemValue = isset(static::$rawSystemValues[$category])
 			? static::$rawSystemValues[$category]
-			: \setlocale($category, NULL);
+			: \setlocale($category, '0');
 		static::$rawSystemValues[$category] = $rawSystemValue;
 		// if value is `C` only - sel att categories to null and return nulls;
 		if ($rawSystemValue === 'C') {
